@@ -1,0 +1,51 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 头部标题 -->
+  <view class="header">
+    <view class="title">条码识别与生成</view>
+    <view class="subtitle">轻松识别和生成各种条码</view>
+  </view>
+
+  <!-- 功能卡片 -->
+  <view class="card-container">
+    <!-- 识别功能卡片 -->
+    <view class="card scan-card" bindtap="goToScan">
+      <view class="card-icon">📷</view>
+      <view class="card-title">条码识别</view>
+      <view class="card-desc">使用摄像头或相册识别条码</view>
+    </view>
+
+    <!-- 生成功能卡片 -->
+    <view class="card generate-card" bindtap="goToGenerate">
+      <view class="card-icon">🔧</view>
+      <view class="card-title">条码生成</view>
+      <view class="card-desc">生成二维码和条形码</view>
+    </view>
+  </view>
+
+  <!-- 使用说明 -->
+  <view class="instructions">
+    <view class="section-title">使用说明</view>
+    <view class="instruction-item">
+      <text class="step">1.</text>
+      <text class="text">点击"条码识别"使用摄像头或相册识别条码</text>
+    </view>
+    <view class="instruction-item">
+      <text class="step">2.</text>
+      <text class="text">点击"条码生成"输入内容生成条码</text>
+    </view>
+    <view class="instruction-item">
+      <text class="step">3.</text>
+      <text class="text">生成的条码可以保存到相册</text>
+    </view>
+  </view>
+
+  <!-- 版权信息 -->
+  <view class="copyright-section">
+    <view class="copyright-text">2025  ©  条码识别与生成小程序</view>
+    <view class="copyright-desc">技术支持：
+      <text class="link-text" bindtap="openDeveloperWebsite">Luminous辰汐</text>
+    </view>
+    <view class="copyright-version">版本：v1.0.0</view>
+  </view>
+</view>

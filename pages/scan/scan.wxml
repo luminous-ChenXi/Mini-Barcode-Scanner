@@ -1,0 +1,66 @@
+<!--pages/scan/scan.wxml-->
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="header">
+    <view class="title">条码识别</view>
+    <view class="subtitle">使用摄像头或相册识别条码</view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="card-container">
+    <!-- 摄像头卡片 -->
+    <view class="card camera-card" bindtap="openCamera">
+      <view class="card-icon">📷</view>
+      <view class="card-title">打开摄像头</view>
+      <view class="card-desc">实时拍摄识别条码</view>
+    </view>
+    
+    <!-- 相册卡片 -->
+    <view class="card album-card" bindtap="chooseImage">
+      <view class="card-icon">🖼️</view>
+      <view class="card-title">选择相册</view>
+      <view class="card-desc">从相册选择图片识别</view>
+    </view>
+  </view>
+
+  <!-- 预览区域 -->
+  <view class="preview-section" wx:if="{{imagePath}}">
+    <view class="section-title">图片预览</view>
+    <image src="{{imagePath}}" class="preview-image" mode="aspectFit" />
+    
+    <view class="preview-actions">
+      <button class="action-btn scan-btn" bindtap="scanBarcode" loading="{{scanning}}">
+        {{scanning ? '识别中...' : '识别条码'}}
+      </button>
+      <button class="action-btn retake-btn" bindtap="retakeImage">重新选择</button>
+    </view>
+  </view>
+
+  <!-- 识别结果 -->
+  <view class="results-section" wx:if="{{results.length > 0}}">
+    <view class="section-title">识别结果 ({{results.length}} 个条码)</view>
+    
+    <view class="result-list">
+      <view class="result-item" wx:for="{{results}}" wx:key="index">
+        <view class="result-type">{{item.type}}</view>
+        <view class="result-data">{{item.data}}</view>
+        <button class="copy-btn" bindtap="copyResult" data-index="{{index}}">复制</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{!imagePath && !results.length}}">
+    <view class="empty-icon">🔍</view>
+    <view class="empty-text">请选择图片或打开摄像头开始识别</view>
+  </view>
+
+  <!-- 版权信息 -->
+  <view class="copyright-section">
+    <view class="copyright-text">2025  ©  条码识别与生成小程序</view>
+    <view class="copyright-desc">技术支持：
+      <text class="link-text" bindtap="openDeveloperWebsite">Luminous辰汐</text>
+    </view>
+    <view class="copyright-version">版本：v1.0.0</view>
+  </view>
+</view>

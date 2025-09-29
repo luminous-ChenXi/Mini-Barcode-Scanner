@@ -1,0 +1,246 @@
+/* pages/index/index.wxss */
+.container {
+  padding: 40rpx;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80rpx;
+  padding-top: 60rpx;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.title {
+  font-size: 56rpx;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 24rpx;
+  text-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.2);
+  letter-spacing: -0.5rpx;
+}
+
+.subtitle {
+  font-size: 32rpx;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40rpx;
+  margin-bottom: 80rpx;
+}
+
+.card {
+  background: white;
+  border-radius: 24rpx;
+  box-shadow: 
+    0 8rpx 32rpx rgba(0, 0, 0, 0.12),
+    0 2rpx 8rpx rgba(0, 0, 0, 0.08);
+  padding: 48rpx;
+  position: relative;
+  overflow: hidden;
+  animation: slideInUp 0.6s ease-out;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s;
+}
+
+.card:active::before {
+  left: 100%;
+}
+
+.card-icon {
+  font-size: 96rpx;
+  text-align: center;
+  margin-bottom: 32rpx;
+  filter: drop-shadow(0 4rpx 16rpx rgba(0, 0, 0, 0.1));
+}
+
+.card-title {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #2d3748;
+  text-align: center;
+  margin-bottom: 16rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-desc {
+  font-size: 30rpx;
+  color: #718096;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.scan-card {
+  border-left: 12rpx solid #48bb78;
+  animation-delay: 0.1s;
+}
+
+.scan-card .card-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+.generate-card {
+  border-left: 12rpx solid #ed8936;
+  animation-delay: 0.2s;
+}
+
+.generate-card .card-icon {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.instructions {
+  composes: acrylic;
+  padding: 48rpx;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.section-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 40rpx;
+  text-align: center;
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.2);
+}
+
+.instruction-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 32rpx;
+  animation: fadeInLeft 0.6s ease-out;
+}
+
+.instruction-item:nth-child(1) { animation-delay: 0.4s; }
+.instruction-item:nth-child(2) { animation-delay: 0.5s; }
+.instruction-item:nth-child(3) { animation-delay: 0.6s; }
+
+.step {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: 700;
+  margin-right: 24rpx;
+  flex-shrink: 0;
+  box-shadow: 0 4rpx 16rpx rgba(102, 126, 234, 0.3);
+}
+
+.text {
+  font-size: 30rpx;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.6;
+  flex: 1;
+  font-weight: 400;
+}
+
+/* 自定义动画 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60rpx) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 版权信息样式 */
+.copyright-section {
+  text-align: center;
+  padding: 40rpx 0;
+  margin-top: 60rpx;
+  border-top: 1rpx solid rgba(255, 255, 255, 0.2);
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.copyright-text {
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8rpx;
+  font-weight: 500;
+}
+
+.copyright-desc {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 8rpx;
+}
+
+.link-text {
+  color: #4299e1;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.link-text:active {
+  color: #3182ce;
+  transform: scale(0.98);
+}
+
+.copyright-version {
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* 响应式调整 */
+@media (max-width: 375px) {
+  .container {
+    padding: 32rpx;
+  }
+  
+  .title {
+    font-size: 48rpx;
+  }
+  
+  .card {
+    padding: 40rpx;
+  }
+}

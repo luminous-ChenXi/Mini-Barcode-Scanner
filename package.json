@@ -1,0 +1,31 @@
+{
+  "name": "barcode-scanner-generator-miniprogram",
+  "version": "1.0.0",
+  "description": "微信小程序 - 条码识别与生成工具",
+  "main": "app.js",
+  "scripts": {
+    "dev": "微信开发者工具调试模式",
+    "build": "微信开发者工具构建"
+  },
+  "keywords": [
+    "微信小程序",
+    "条码识别",
+    "二维码",
+    "条形码",
+    "barcode",
+    "qrcode"
+  ],
+  "author": "Luminous辰汐",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "<repository-url>"
+  },
+  "bugs": {
+    "url": "<repository-url>/issues"
+  },
+  "homepage": "<repository-url>#readme",
+  "engines": {
+    "微信开发者工具": ">=1.06.0"
+  }
+}

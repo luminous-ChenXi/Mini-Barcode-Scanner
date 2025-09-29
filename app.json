@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/scan/scan",
+    "pages/generate/generate"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#667eea",
+    "navigationBarTitleText": "条码识别与生成",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#667eea",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-active.png"
+      },
+      {
+        "pagePath": "pages/scan/scan",
+        "text": "识别",
+        "iconPath": "images/scan.png",
+        "selectedIconPath": "images/scan-active.png"
+      },
+      {
+        "pagePath": "pages/generate/generate",
+        "text": "生成",
+        "iconPath": "images/generate.png",
+        "selectedIconPath": "images/generate-active.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.camera": {
+      "desc": "需要访问您的摄像头进行条码识别"
+    },
+    "scope.writePhotosAlbum": {
+      "desc": "需要保存生成的条码图片到相册"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

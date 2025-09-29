@@ -1,0 +1,79 @@
+<!--pages/generate/generate.wxml-->
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="header">
+    <view class="title">条码生成</view>
+    <view class="subtitle">生成二维码和条形码</view>
+  </view>
+
+  <!-- 生成表单 -->
+  <view class="form-section">
+    <view class="form-group">
+      <view class="form-label">内容</view>
+      <textarea 
+        class="form-input" 
+        placeholder="请输入要生成条码的内容"
+        value="{{inputText}}"
+        bindinput="onInputChange"
+        maxlength="500"
+      />
+      <view class="char-count {{inputText.length >= 450 ? 'danger' : inputText.length >= 400 ? 'warning' : ''}}">{{inputText.length}}/500</view>
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">条码类型</view>
+      <picker 
+        class="form-picker" 
+        range="{{barcodeTypes}}" 
+        value="{{selectedTypeIndex}}"
+        bindchange="onTypeChange"
+      >
+        <view class="picker-value">{{barcodeTypes[selectedTypeIndex]}}</view>
+      </picker>
+    </view>
+
+    <button class="generate-btn" bindtap="generateBarcode" loading="{{generating}}">
+      {{generating ? '生成中...' : '生成条码'}}
+    </button>
+  </view>
+
+  <!-- 生成的条码 -->
+  <view class="results-section" wx:if="{{generatedImage}}">
+    <view class="section-title">生成的条码</view>
+    
+    <view class="result-item">
+      <view class="result-type">{{barcodeTypes[selectedTypeIndex]}}</view>
+      <image src="{{generatedImage}}" class="result-image" mode="aspectFit" show-menu-by-longpress="true" />
+      <view class="result-actions">
+        <button class="action-btn save-btn" bindtap="saveToAlbum">保存到相册</button>
+        <button class="action-btn share-btn" bindtap="shareBarcode">分享</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 使用提示 -->
+  <view class="tips-section">
+    <view class="section-title">使用提示</view>
+    <view class="tip-item">
+      <text class="tip-icon">💡</text>
+      <text class="tip-text">二维码适合存储网址、文本等信息</text>
+    </view>
+    <view class="tip-item">
+      <text class="tip-icon">💡</text>
+      <text class="tip-text">条形码适合存储数字信息</text>
+    </view>
+    <view class="tip-item">
+      <text class="tip-icon">💡</text>
+      <text class="tip-text">生成后可以保存到相册或分享给朋友</text>
+    </view>
+  </view>
+
+  <!-- 版权信息 -->
+  <view class="copyright-section">
+    <view class="copyright-text">2025  ©  条码识别与生成小程序</view>
+    <view class="copyright-desc">技术支持：
+      <text class="link-text" bindtap="openDeveloperWebsite">Luminous辰汐</text>
+    </view>
+    <view class="copyright-version">版本：v1.0.0</view>
+  </view>
+</view>
