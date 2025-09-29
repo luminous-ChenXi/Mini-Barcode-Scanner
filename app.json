@@ -44,5 +44,6 @@
       "desc": "需要保存生成的条码图片到相册"
     }
   },
+  "requiredBackgroundModes": ["fetch"],
   "sitemapLocation": "sitemap.json"
 }

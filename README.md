@@ -1,7 +1,6 @@
-
 # 条码识别与生成小程序
-条码识别与生成系统：Barcode-Scanner-Generator的小程序版本（共用同一个后端，详情请参考https://github.com/luminous-ChenXi/Barcode-Scanner-Generator）
-是一个功能完整的微信小程序，提供二维码和条形码的识别与生成功能。
+
+一个功能完整的微信小程序，提供二维码和条形码的识别与生成功能。
 
 ## 🚀 功能特性
 
@@ -10,8 +9,6 @@
 - **保存分享**：生成的条码可保存到相册或分享给好友
 - **美观界面**：现代化的UI设计，流畅的动画效果
 - **响应式布局**：适配不同尺寸的移动设备
-
-![f7d1a260ceeb7d84d25354cbdcb5c16d](https://github.com/user-attachments/assets/6d13c91b-4fe6-44c8-bece-0e43ddfdf2a0)
 
 ## 📱 技术栈
 
